@@ -14,12 +14,9 @@ const golosinas = "golosinas";
 let precio_golosinas = 150;
 const codigo_golosinas = "E1011";
 let acumulador = 0;
-//añadimos un segundo acumulador porque si usamos el mismo para ambos ejercicios 
-//se termina sumando todo lo de los ejericios anteriores
-let acumulador_2=0;
-let descuento_efectivo= 0.8;
-let recargo_cuotas_3_6= 1.22;
-let recargo_cuotas_12= 1.40;
+const descuento_efectivo= 0.8;
+const recargo_cuotas_3_6= 1.22;
+const recargo_cuotas_12= 1.40;
 
 
 
@@ -54,21 +51,16 @@ else(codigo_golosinas === codigo_golosinas)
     acumulador += precio_golosinas;
     console.log("el total de tu compra es: $"+precio_golosinas);
 }
-
+acumulador= 0;
 console.log("Ejercicio 2")
 if(codigo_carne === codigo_carne && codigo_golosinas === codigo_golosinas && codigo_verduras === codigo_verduras){
-    acumulador_2 += precio_carne+precio_golosinas+(precio_verduras*3);
+    acumulador += precio_carne+precio_golosinas+(precio_verduras*3);
     console.log("Carne x1Kg $"+precio_carne);
     console.log("Bolsa de chupetines Pop x1 Unidad $"+precio_golosinas);
     console.log("Tomate x3Kg $"+precio_verduras*3);
-    console.log("El monto total es: $"+acumulador_2);
-    console.log("El precio a abonar de su compra en efectivo es: $"+acumulador_2*descuento_efectivo);
-    console.log("El precio a abonar en 3 cuotas seria un monto final de: $"+acumulador_2*recargo_cuotas_3_6+" y el valor de cada cuota seria de: $"+(acumulador*recargo_cuotas_3_6)/3);
-    console.log("El precio a abonar en 6 cuotas seria un monto final de: $"+acumulador_2*recargo_cuotas_3_6+" y el valor de cada cuota seria de: $"+(acumulador*recargo_cuotas_3_6)/6);
-    console.log("El precio a abonar en 12 cuotas seria un monto final de: $"+acumulador_2*recargo_cuotas_12+" y el valor de cada cuota seria de: $"+(acumulador*recargo_cuotas_12)/12);
+    console.log("El monto total es: $"+acumulador);
+    console.log("El precio a abonar de su compra en efectivo es: $"+acumulador*descuento_efectivo);
+    console.log("El precio a abonar en 3 cuotas seria un monto final de: $"+acumulador*recargo_cuotas_3_6+" y el valor de cada cuota seria de: $"+(acumulador*recargo_cuotas_3_6)/3);
+    console.log("El precio a abonar en 6 cuotas seria un monto final de: $"+acumulador*recargo_cuotas_3_6+" y el valor de cada cuota seria de: $"+(acumulador*recargo_cuotas_3_6)/6);
+    console.log("El precio a abonar en 12 cuotas seria un monto final de: $"+acumulador*recargo_cuotas_12+" y el valor de cada cuota seria de: $"+(acumulador*recargo_cuotas_12)/12);
 }
-
-
-
-
-
